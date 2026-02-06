@@ -6,3 +6,5 @@ __pycache__/
 README.md
 *.md
 .dockerignore
+compose.yml
+docker-compose.yml
