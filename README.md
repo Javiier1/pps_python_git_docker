@@ -66,21 +66,25 @@ curl http://localhost:5000/frotar/5
 
 ## Despliegue con Docker
 
-### Construir imagen
+### Crear red
+```bash
+docker network create bayeta-network
+```
+
+### Levantar MongoDB
+```bash
+docker run -d --name mongo --network bayeta-network mongo:latest
+```
+
+### Construir y ejecutar aplicación
 ```bash
 docker build -t bayeta-fortuna .
+docker run -d -p 5000:5000 --name bayeta-app --network bayeta-network bayeta-fortuna
 ```
 
-### Ejecutar contenedor
+### Limpiar
 ```bash
-docker run -d -p 5000:5000 --name bayeta-app bayeta-fortuna
-```
-
-### Acceder a la aplicación
-http://localhost:5000
-
-### Parar contenedor
-```bash
-docker stop bayeta-app
-docker rm bayeta-app
+docker stop bayeta-app mongo
+docker rm bayeta-app mongo
+docker network rm bayeta-network
 ```
