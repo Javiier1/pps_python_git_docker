@@ -63,3 +63,24 @@ curl http://localhost:5000/frotar/5
   ]
 }
 ```
+
+## Despliegue con Docker
+
+### Construir imagen
+```bash
+docker build -t bayeta-fortuna .
+```
+
+### Ejecutar contenedor
+```bash
+docker run -d -p 5000:5000 --name bayeta-app bayeta-fortuna
+```
+
+### Acceder a la aplicación
+http://localhost:5000
+
+### Parar contenedor
+```bash
+docker stop bayeta-app
+docker rm bayeta-app
+```
