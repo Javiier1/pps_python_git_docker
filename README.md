@@ -68,3 +68,24 @@ http://localhost:5000
 ### Endpoints disponibles
 - `GET /` - Página de bienvenida
 - `GET /frotar/<n>` - Obtener n frases aleatorias
+
+### POST /frotar/add
+Añade nuevas frases a la base de datos
+
+**Ejemplo:**
+```bash
+curl -X POST http://localhost:5000/frotar/add \
+  -H "Content-Type: application/json" \
+  -d '{"frases": ["Nueva frase 1", "Nueva frase 2"]}'
+```
+
+**Body esperado:**
+```json
+{
+  "frases": [
+    "Frase 1",
+    "Frase 2",
+    "..."
+  ]
+}
+```
