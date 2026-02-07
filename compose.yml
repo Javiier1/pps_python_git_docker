@@ -6,6 +6,8 @@ services:
     container_name: bayeta-mongo
     ports:
       - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
     networks:
       - bayeta-network
 
@@ -21,6 +23,10 @@ services:
       - MONGO_PORT=27017
     networks:
       - bayeta-network
+
+volumes:
+  mongo-data:
+    driver: local
 
 networks:
   bayeta-network:
