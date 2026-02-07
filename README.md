@@ -40,30 +40,6 @@ python app.py
 deactivate
 ```
 
-## API Endpoints
-
-### GET /
-Página de bienvenida
-
-### GET /frotar/<n_frases>
-Obtiene N frases auspiciosas aleatorias
-
-**Ejemplo:**
-```bash
-curl http://localhost:5000/frotar/5
-```
-
-**Respuesta:**
-```json
-{
-  "frases": [
-    "Hoy será un gran día lleno de oportunidades",
-    "La fortuna sonríe a los valientes",
-    "Tus esfuerzos pronto darán frutos"
-  ]
-}
-```
-
 ## Despliegue con Docker Compose
 
 ### Levantar todos los servicios
