@@ -68,22 +68,22 @@ curl http://localhost:5000/frotar/5
 
 ### Levantar todos los servicios
 ```bash
-docker compose up --build
+docker-compose up --build
 ```
 
 ### Modo detached (segundo plano)
 ```bash
-docker compose up -d
+docker-compose up -d
 ```
 
 ### Ver logs
 ```bash
-docker compose logs -f
+docker-compose logs -f
 ```
 
 ### Parar servicios
 ```bash
-docker compose down
+docker-compose down
 ```
 
 ### Acceder a la aplicación
